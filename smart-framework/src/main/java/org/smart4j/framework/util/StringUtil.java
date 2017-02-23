@@ -15,4 +15,10 @@ public final class StringUtil {
     public static boolean isNotEmpty(String str){
         return !isEmpty(str);
     }
+    public static String[] splitString(String str,String param){
+        if (str != null){
+            str = str.trim();
+        }
+        return StringUtils.split(str,param);
+    }
 }

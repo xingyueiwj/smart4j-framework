@@ -15,7 +15,7 @@ public class View {
     /**
      * 模型数据
      */
-    private Map<String,Object>model;
+    private Map<String,Object> model;
 
     public View(String path){
         this.path = path;
