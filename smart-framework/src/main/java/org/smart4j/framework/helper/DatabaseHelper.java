@@ -105,7 +105,22 @@ public final class DatabaseHelper {
             }
         }
     }
-
+    /**
+     * 回滚事务
+     */
+    public static void rollbackTransaction(){
+        Connection conn = getConnection();
+        if (conn!=null){
+            try {
+                conn.rollback();
+                conn.close();
+            }catch (SQLException e){
+                LOGGER.error("rollback transation failure",e);
+            }finally {
+                CONNECTION_HOLDER.remove();
+            }
+        }
+    }
     /**
      * 查询实体列表
      * @param entityClass
